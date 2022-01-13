@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import { client } from '../client'
 import Spinner from './Spinner'
 import { categories } from '../utils/data'
-//categories
 
 const CreatePin = ({ user }) => {
     const [title, setTitle] = useState("")
@@ -87,7 +86,7 @@ const CreatePin = ({ user }) => {
                                         <p className='font-bold text-2xl'>
                                             <AiOutlineCloudUpload />
                                         </p>
-                                        <p className='text-lg'>Click to upload</p>
+                                        <p className='text-lg'>Click to upload a Lego photo</p>
                                     </div>
                                     <p className='mt-32 text-grey-400'>
                                         Use high-quality JPG, SVG, PNG, GIF  less than 20 MB
@@ -137,24 +136,24 @@ const CreatePin = ({ user }) => {
                         type="text"
                         value={about}
                         onChange={(e) => setAbout(e.target.value)}
-                        placeholder='What is yout pin about'
+                        placeholder='What is the lego item #'
                         className='outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2'
                     />
                     <input
                         type="text"
                         value={destination}
                         onChange={(e) => setDestination(e.target.value)}
-                        placeholder='Add a destination link'
+                        placeholder='Link to the buy the lego'
                         className='outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2'
                     />
                     <div className='flex flex-col'>
                         <div>
-                            <p className='mb-2 font-semibold text-lg sm:text-xl'>Choose pin categoty</p>
+                            <p className='mb-2 font-semibold text-lg sm:text-xl'>Choose lego theme</p>
                             <select
                                 onChange={(e) => setCategory(e.target.value)}
                                 className='outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer'
                             >
-                                <option value="other" className='bg-white'>Select Category</option>
+                                <option value="other" className='bg-white'>Select theme</option>
                                 {categories.map((category) => (
                                     <option className='text-base border-0 outline-none capitalize bg-white text-black' value={category.name}>
                                         {category.name}
@@ -168,7 +167,7 @@ const CreatePin = ({ user }) => {
                                 onClick={savePin}
                                 className='bg-red-500 text-white font-bold p-2 rounded-full w-28 outline-none'
                             >
-                                Save Pin
+                                Save Lego
                             </button>
                         </div>
                     </div>
